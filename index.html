@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Voice Assistant</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+
+        <div class="orb-bg orb-one"></div>
+        <div class="orb-bg orb-two"></div>
+        <div class="orb-bg orb-three"></div>
+
+    </div>
+
+
+    <!-- Main App -->
+    <main class="app">
+
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <h1>Nova AI</h1>
+
+                    <p>
+                        Intelligent Voice Assistant
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="online">
+
+                <span></span>
+
+                Online
+
+            </div>
+
+        </header>
+
+
+
+        <!-- AI AREA -->
+        <section class="ai-area">
+
+
+            <!-- AI Orb -->
+            <div
+                id="aiOrb"
+                class="ai-orb"
+            >
+
+                <div class="orb-ring ring-one"></div>
+
+                <div class="orb-ring ring-two"></div>
+
+                <div class="orb-core">
+
+                    <div class="core-symbol">
+                        ✦
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Status -->
+            <div class="status-area">
+
+                <h2 id="status">
+                    Ready to listen
+                </h2>
+
+                <p id="subStatus">
+                    Choose your language and start speaking
+                </p>
+
+            </div>
+
+
+            <!-- Language -->
+            <select
+                id="languageSelect"
+                class="language-select"
+            >
+
+                <option value="ml">
+                    🇮🇳 മലയാളം
+                </option>
+
+                <option value="en">
+                    🇬🇧 English
+                </option>
+
+                <option value="ta">
+                    🇮🇳 தமிழ்
+                </option>
+
+                <option value="hi">
+                    🇮🇳 हिन्दी
+                </option>
+
+                <option value="ar">
+                    🇸🇦 العربية
+                </option>
+
+            </select>
+
+
+            <!-- Microphone -->
+            <button
+                id="micButton"
+                class="mic-button"
+            >
+
+                <span class="mic-icon">
+                    🎙️
+                </span>
+
+            </button>
+
+
+            <p class="mic-hint">
+                Tap to speak
+            </p>
+
+
+        </section>
+
+
+
+        <!-- Conversation -->
+        <section
+            id="conversation"
+            class="conversation"
+        >
+
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer>
+
+            <span>
+                Powered by Whisper
+            </span>
+
+            <span>•</span>
+
+            <span>
+                Groq AI
+            </span>
+
+            <span>•</span>
+
+            <span>
+                ElevenLabs
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>

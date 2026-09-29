@@ -1,0 +1,882 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #172554 0%,
+            #070b18 45%,
+            #02030a 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.orb-bg {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.25;
+
+    animation: floating 10s ease-in-out infinite;
+}
+
+
+.orb-one {
+
+    width: 350px;
+    height: 350px;
+
+    background: #2563eb;
+
+    top: -100px;
+    left: -100px;
+}
+
+
+.orb-two {
+
+    width: 300px;
+    height: 300px;
+
+    background: #7c3aed;
+
+    right: -100px;
+    top: 30%;
+
+    animation-delay: 2s;
+}
+
+
+.orb-three {
+
+    width: 280px;
+    height: 280px;
+
+    background: #0891b2;
+
+    bottom: -100px;
+    left: 35%;
+
+    animation-delay: 4s;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-40px)
+            scale(1.1);
+
+    }
+}
+
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: min(1100px, 94%);
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 28px 10px;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.brand-icon {
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(59, 130, 246, 0.45);
+}
+
+
+.brand h1 {
+
+    font-size: 21px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.brand p {
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+.online {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    font-size: 12px;
+
+    color: #cbd5e1;
+}
+
+
+.online span {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px #22c55e;
+
+    animation: pulseDot 2s infinite;
+}
+
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+
+/* =========================================
+   AI AREA
+========================================= */
+
+.ai-area {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 560px;
+
+    padding-bottom: 20px;
+}
+
+
+
+/* =========================================
+   AI ORB
+========================================= */
+
+.ai-orb {
+
+    position: relative;
+
+    width: 240px;
+    height: 240px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 35px;
+}
+
+
+.orb-core {
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #60a5fa,
+            #2563eb 45%,
+            #4c1d95 100%
+        );
+
+    box-shadow:
+
+        0 0 35px
+        rgba(59, 130, 246, 0.7),
+
+        0 0 80px
+        rgba(124, 58, 237, 0.35);
+
+    animation:
+        orbBreathing 4s ease-in-out infinite;
+}
+
+
+.core-symbol {
+
+    font-size: 42px;
+
+    color: white;
+
+    text-shadow:
+        0 0 25px white;
+
+    animation:
+        symbolFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes orbBreathing {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+}
+
+
+@keyframes symbolFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-5px);
+
+    }
+}
+
+
+
+/* =========================================
+   ORB RINGS
+========================================= */
+
+.orb-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(96, 165, 250, 0.35);
+
+    pointer-events: none;
+}
+
+
+.ring-one {
+
+    width: 180px;
+    height: 180px;
+
+    animation:
+        rotateRing 10s linear infinite;
+}
+
+
+.ring-two {
+
+    width: 225px;
+    height: 225px;
+
+    border-style: dashed;
+
+    border-color:
+        rgba(139, 92, 246, 0.35);
+
+    animation:
+        rotateRingReverse 15s linear infinite;
+}
+
+
+@keyframes rotateRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes rotateRingReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-area {
+
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+
+.status-area h2 {
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+.status-area p {
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+
+/* =========================================
+   LANGUAGE
+========================================= */
+
+.language-select {
+
+    width: 230px;
+
+    padding: 12px 16px;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(15,23,42,0.75);
+
+    color: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.25s;
+}
+
+
+.language-select:hover {
+
+    border-color:
+        rgba(96,165,250,0.6);
+
+    box-shadow:
+        0 0 20px
+        rgba(59,130,246,0.15);
+}
+
+
+.language-select option {
+
+    background: #0f172a;
+
+    color: white;
+}
+
+
+
+/* =========================================
+   MICROPHONE
+========================================= */
+
+.mic-button {
+
+    width: 76px;
+    height: 76px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+
+        0 10px 35px
+        rgba(37,99,235,0.35),
+
+        inset 0 1px 1px
+        rgba(255,255,255,0.3);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.mic-button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+
+        0 15px 45px
+        rgba(59,130,246,0.5);
+}
+
+
+.mic-button:active {
+
+    transform: scale(0.95);
+}
+
+
+.mic-icon {
+
+    font-size: 31px;
+}
+
+
+.mic-hint {
+
+    margin-top: 13px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+
+/* =========================================
+   RECORDING STATE
+========================================= */
+
+.mic-button.recording {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+
+    animation:
+        recordingPulse 1.3s infinite;
+}
+
+
+.ai-orb.listening .orb-core {
+
+    animation:
+        listeningPulse 0.9s ease-in-out infinite;
+}
+
+
+.ai-orb.listening .ring-one {
+
+    animation:
+        rotateRing 3s linear infinite;
+}
+
+
+.ai-orb.listening .ring-two {
+
+    animation:
+        rotateRingReverse 5s linear infinite;
+}
+
+
+@keyframes recordingPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(239,68,68,0.6);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 22px
+            rgba(239,68,68,0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(239,68,68,0);
+    }
+}
+
+
+@keyframes listeningPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+
+/* =========================================
+   CONVERSATION
+========================================= */
+
+.conversation {
+
+    width: min(720px, 100%);
+
+    max-height: 250px;
+
+    overflow-y: auto;
+
+    margin: 0 auto 25px;
+
+    padding: 10px;
+}
+
+
+.conversation:empty {
+
+    display: none;
+}
+
+
+.message {
+
+    padding: 14px 17px;
+
+    margin-bottom: 12px;
+
+    border-radius: 18px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    animation:
+        messageIn 0.35s ease;
+}
+
+
+.user-message {
+
+    margin-left: 80px;
+
+    background:
+        rgba(37,99,235,0.18);
+
+    border:
+        1px solid
+        rgba(59,130,246,0.18);
+}
+
+
+.ai-message {
+
+    margin-right: 80px;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+@keyframes messageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    padding: 20px;
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding: 20px 5px;
+    }
+
+
+    .online {
+
+        display: none;
+    }
+
+
+    .ai-orb {
+
+        width: 210px;
+        height: 210px;
+    }
+
+
+    .orb-core {
+
+        width: 115px;
+        height: 115px;
+    }
+
+
+    .ring-one {
+
+        width: 165px;
+        height: 165px;
+    }
+
+
+    .ring-two {
+
+        width: 200px;
+        height: 200px;
+    }
+
+
+    .status-area h2 {
+
+        font-size: 20px;
+    }
+
+
+    .user-message {
+
+        margin-left: 25px;
+    }
+
+
+    .ai-message {
+
+        margin-right: 25px;
+    }
+
+
+    footer {
+
+        font-size: 9px;
+    }
+
+}
